@@ -1,6 +1,28 @@
 
 const jsBoost = (function(selector, args) {
 
+    function attr(type, value) {
+        try {
+
+            if(selector.indexOf("#") == 0) {
+                document.getElementById(selector.replace("#", "")).src = value;
+            } else if(selector.indexOf("\.") == 0) {
+
+                let elements = document.getElementsByClassName(selector.replace("\.", ""));
+
+                for( var i = 0; i < elements.length; i++ ) {
+                    elements[i].src = value;
+                }
+
+            } else {
+                throw err = "Selector ["+selector+"] not found, use id or class";
+            }
+
+        } catch(err) {
+            console.error(err);
+        }
+    }
+
     function html(text) {
         try {
 
@@ -99,10 +121,11 @@ const jsBoost = (function(selector, args) {
 	}
 
 	return {
+		attr: attr,
 		html: html,
+		append: append,
 		slideOpen: slideOpen,
-		slideClose: slideClose,
-		append: append
+		slideClose: slideClose
 	};
 
 });

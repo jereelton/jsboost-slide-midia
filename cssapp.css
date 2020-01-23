@@ -12,21 +12,12 @@
 	left: 0px;
 	display: none;
 }
-#bg:target {
-	display: block;
-}
-#bg:target ~ .box {
-	/*top: 80px;*/
-	margin-left: -360px;
-	transition: all .5s;
-	/*transition-delay: .2s;*/
-}
 .box {
-	width: 720px;
+	width: 900px;
 	height: 405px;
 	background: #FFFFFF;
 	position: absolute;
-	margin-left: -3000px;
+	margin-left: -4000px;
 	left: 50%;
 	border-radius: 10px;
 	box-shadow: 2px 3px 16px #000000;
@@ -51,9 +42,6 @@ video {
 	text-align: center;
 	border-radius: 5px;
 	cursor: default;
-}
-#close:hover {
-	opacity: 0.6;
 }
 h1 {
 	width: 300px;

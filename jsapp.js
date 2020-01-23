@@ -6,7 +6,7 @@ function openModal(context, video) {
 	jsBoost().slideOpen({
 		bgscreen: "#bg",
 		boxmodel: "#box",
-		cssMarginLeft: "-360px",
+		cssMarginLeft: "-450px",
 		cssHeight: "200px",
 		// Accordion Settings, when effect = accordion
 		effect: "accordion",
@@ -15,7 +15,8 @@ function openModal(context, video) {
 	});
 
 	jsBoost("#h1-target").append(context);
-	$("#video").attr("src", video);
+	//$("#video").attr("src", video);
+	jsBoost("#video").attr("src", video);
 
 }
 
@@ -24,7 +25,7 @@ function closeModal(context) {
 	jsBoost().slideClose({
 		bgscreen: "#bg",
 		boxmodel: "#box",
-		cssMarginLeft: "-6000px",
+		cssMarginLeft: "-4000px",
 		cssHeight: "800px",
 		// Accordion Settings, when effect = accordion
 		effect: "accordion",
@@ -34,7 +35,8 @@ function closeModal(context) {
 
 	jsBoost("#h1-target").html(context);
 	setTimeout(function(){
-		$("#video").attr("src", "");
+		//$("#video").attr("src", "");
+		jsBoost("#video").attr("src", "");
 	}, 1500);
 
 }
@@ -45,7 +47,7 @@ $(document).ready(function() {
 	$data_button_click = $('[data-button-click]');
 	$data_close_slide  = $('[data-close-slide]');
 
-	$data_button_click.click(function(){
+	$data_button_click.on("click", function(){
 		//console.log(this.textContent);
 		//console.log($data_button_click.text());
 		//console.log(this.value);
@@ -56,7 +58,7 @@ $(document).ready(function() {
 		openModal(context, midia);
 	});
 
-	$data_close_slide.click(function(){
+	$data_close_slide.on("click", function(){
 		//console.log(this.textContent);
 		//console.log($data_button_click.text());
 		//console.log(this.value);
